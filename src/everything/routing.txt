@@ -1,0 +1,16 @@
+ <Router>
+        <Navbar title="BMC" />
+        <div className="contain">
+          <Switch>
+            <Route exact path={"/"}>
+              <Section com="Complain now" />
+            </Route>
+            <Route exact path={"/complain"}>
+              <Complain CN="Complain Form" />
+            </Route>
+            <Route exact path={"/"}>
+              <Footer CT="CONTACT US" />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
