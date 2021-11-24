@@ -1,8 +1,13 @@
-import React from 'react' 
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
 
 export default function Section(props) {
+ 
+    const [bg, setBg] = useState({isEnter:false})
   
+ const mouseEnterHandler=()=>{
+    setBg({isEnter: !bg.isEnter})
+  }
     return (
         <>
             <section className="background firstsec">
@@ -16,13 +21,11 @@ export default function Section(props) {
                             eius repellat voluptas consectetur animi cupiditate maiores!
                         </p>
                         <div className="buttons">
-                            <Link to="/complain" >
-                            <button className="btn" >{props.com}</button>
-                            </Link>
+                            <button className={bg.isEnter?"onEnter":"onReEnter"} onMouseEnter={mouseEnterHandler}>{props.com}</button>
                         </div>
 
-                    </div>
-                    <div className="secondh">
+                    </div>c
+                    <div  className="secondh">
                         <p className="head">
                             BMC is here to help you
                         </p>
@@ -32,8 +35,9 @@ export default function Section(props) {
                             please feel free to complain anytime. 
                                                        
                         </p>
-                        <div className="buttons">
-                            <button className="btnsm">Know More</button>
+                        <div className="buttons" >
+                           {/* onMouseEnter Task */}
+                           <button className='btnsm' >Know More</button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,124 @@
+.loginpage{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    background: rgb(158, 207, 172);
+}
+.loginformik{
+    display: flex;
+    margin-top: 40px;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(170, 219, 228);
+    color: black;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgb(133, 166, 172);
+}
+.loginform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: center;
+    align-content: center;
+}
+.field{
+      outline: none;
+      margin: 16px;
+      background-color: transparent;
+     color: white;
+     padding: 9px;
+     border: none;
+     border-bottom: 2px solid black;
+}
+.loginbutton{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 30px;
+    background: rgb(137, 243, 177);
+    border-radius: 4px;
+}
+.loginbutton:hover{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 30px;
+    background: rgb(133, 212, 164);
+    border-radius: 4px;
+}
+.link{
+    margin-left: 7px;
+    text-decoration: none;
+}
+.new{
+    font-size: 14px;
+}
+.error{
+    color: red;
+}
+.isAllvalid{
+    font-size: 12px;
+}
+.logout{
+    padding: 8px;
+    margin: 4px;
+    background: red;
+}
+.crudapi{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+    align-content: center;
+    height: 100vh;
+    background-color: rgb(190, 184, 184);
+}
+.addbodies{
+    /* background-color: red; */
+    width: 50%;
+    margin-top: 100px;
+    
+}
+.text input{
+    margin: 7px;
+    padding: 6px;
+    border: none;
+    outline: none;
+    border-left: 5px solid black;
+    box-shadow: 1px 1px 1px 1px grey;
+    
+}
+.addbutton{
+    padding: 8px;
+    margin: 4px;
+   border: 1px solid black;
+   box-shadow: 1px 1px 1px 1px grey;
+}
+.table{
+    border: 2px solid black;
+    margin: 5px;
+}
+.headings{
+    background: cornflowerblue;
+}
+.delete{
+    background: crimson;
+}
+.chartjs{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+    align-content: center;
+    height: 100vh;
+    background-color: rgb(166, 204, 198);
+}
+.bar{
+    width: 70%;
+    margin-top: 100px;
+}

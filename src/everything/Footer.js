@@ -1,23 +1,14 @@
-import React from 'react'
-import { useFormik } from 'formik'
-
-
-
+import React, { useState } from 'react'
 
  function Footer(props) {
-
-    const onSubmit = value => {
-        console.log('trying to contact', value )
+ const [contactInfo, setContactInfo] = useState({name:"",email1:"",textarea1:""})
+       const handleOnCahnge =(e)=>{
+         setContactInfo({...contactInfo,[e.target.name]:e.target.value})
+       }
+    const handleOnsubmit= (e)=>{
+        e.preventDefault()
+        console.log(contactInfo)
     }
-    const initialValues ={
-        name:"",
-        email1:"",
-        textarea1:""
-    }
-     const formik = useFormik({
-         initialValues,
-         onSubmit,
-     })
 
     return (
         <>
@@ -28,20 +19,20 @@ import { useFormik } from 'formik'
                     </strong>
                     </h2>
 
-                    <form onSubmit={formik.handleSubmit} className="forms">
+                    <form onSubmit={handleOnsubmit} className="forms">
 
                         <input type="text" id="name" name="name" placeholder="enter your name"
                             required
-                            onChange={formik.handleChange} value={formik.values.name}
+                            onChange={handleOnCahnge} 
                            
                         />
                         <input type="email" id="email1" name="email1" placeholder="enter your email"
                         required
-                           onChange={formik.handleChange} value={formik.values.email1}
+                           onChange={handleOnCahnge} 
                         />
                         <input type="textarea" id="textarea1" name="textarea1" placeholder="write us"
                         required
-                           onChange={formik.handleChange} value={formik.values.teaxtarea1}
+                           onChange={handleOnCahnge}
                         />
                     <div className="sub">
                         <button type="submit" className="btnsm">submit</button>

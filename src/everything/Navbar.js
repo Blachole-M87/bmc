@@ -1,7 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 export default function Main(props) {
+    const Navigate = useNavigate()
+    const handlingSubmit = ()=>{
+        localStorage.removeItem('token')
+        Navigate('/login')
+    }
+    const token = localStorage.getItem('token')
     return(
         <>
             <nav className="navbar">
@@ -11,10 +17,12 @@ export default function Main(props) {
                         {props.title}
                     </div>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/setting">Settings</Link></li>
-                    <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/conditional">Conditional Rendering</Link></li>
+                    <li><Link to="/services">API Integration</Link></li>
+                    <li><Link to="/chartjs">Chart JS</Link></li>
                     {/* <button className="btnsm">help?</button> */}
+                    <div>{token?<div><button className="logout" onClick={handlingSubmit}>Logout</button></div>:""}</div>
+                
                 </ul>
             </nav>
       </>
