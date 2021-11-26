@@ -87,7 +87,7 @@ const CrudApi = () => {
                properties: data[index].properties=properties,}
             
       
-         axios.put(`/heavenlybodies/${id}`,request)
+         axios.patch(`/heavenlybodies/${id}`,request)
             const removed = data.splice(index,1,request)
             console.log(removed)
             setData(data)

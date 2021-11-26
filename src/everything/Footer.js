@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
  function Footer(props) {
- const [contactInfo, setContactInfo] = useState({name:"",email1:"",textarea1:""})
+ const [contactInfo, setContactInfo] = useState({name:"",number1:"",textarea1:""})
+ const [erroring, setErroring] = useState('')
        const handleOnCahnge =(e)=>{
          setContactInfo({...contactInfo,[e.target.name]:e.target.value})
        }
@@ -9,6 +10,25 @@ import React, { useState } from 'react'
         e.preventDefault()
         console.log(contactInfo)
     }
+
+    const handleKeyPress = (e)=>{
+            var key = e.key
+            const regex =/^[0-9\b]+$/;
+            if(e.target.value.length === 0){
+                setErroring('*')
+            }
+           else if(!regex.test(key)){
+                setErroring("enter a valid number");
+            }
+            else if(e.target.value.length !== 9){
+                setErroring("numbers must be 10 digit");
+            }
+            else{
+                setErroring("")
+            }
+           
+        }
+
 
     return (
         <>
@@ -21,15 +41,12 @@ import React, { useState } from 'react'
 
                     <form onSubmit={handleOnsubmit} className="forms">
 
-                        <input type="text" id="name" name="name" placeholder="enter your name"
-                            required
-                            onChange={handleOnCahnge} 
-                           
-                        />
-                        <input type="email" id="email1" name="email1" placeholder="enter your email"
-                        required
-                           onChange={handleOnCahnge} 
-                        />
+                        <input type="text" id="name" name="name" placeholder="enter your name" required onChange={handleOnCahnge} />
+                        {/* onKeyPress Task */}
+                        <input type="text" id="number1" onKeyPress={(e)=>handleKeyPress(e)} name="number1" placeholder="enter your number" required onChange={handleOnCahnge} />
+                        <div className="eror">
+                            {erroring}
+                        </div>
                         <input type="textarea" id="textarea1" name="textarea1" placeholder="write us"
                         required
                            onChange={handleOnCahnge}

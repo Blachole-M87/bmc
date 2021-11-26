@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router'
 
 import * as Yup from 'yup'
@@ -61,24 +61,7 @@ export default function Complain(props) {
         onSubmit
     })
     
-    // const handleKeyPress = (e)=>{
-    //     var key = e.key
-    //     const regex =/^[0-9\b]+$/;
-    //     if(e.target.value.length === 0){
-    //         setErroring('*')
-    //     }
-    //    else if(!regex.test(key)){
-    //         setErroring("enter a valid number");
-    //     }
-    //     else if(e.target.value.length !== 9){
-    //         setErroring("numbers must be 10 digit");
-    //     }
-    //     else{
-    //         setErroring("")
-    //     }
-       
-    // }
-   
+
     return (
         <>
             <div className="container">
@@ -111,9 +94,8 @@ export default function Complain(props) {
                             <sub>{Formik.touched.number && Formik.errors.number ? <div className="error">{Formik.errors.number}</div> : null}</sub>
                         </div> */}
 
-                        {/* onKeyPress Task */}
+                        
                         <div className="formcontrol">
-                        {/* onKeyPress={(e)=>handleKeyPress(e)} */}
                             <input name="number" type="text" id="number"  onChange={Formik.handleChange} value={Formik.values.number} onBlur={Formik.handleBlur} placeholder="enter your number" />
                             <sub>{Formik.touched.number && Formik.errors.number ? <div className="error">{Formik.errors.number}</div> : null}</sub>
                         </div>

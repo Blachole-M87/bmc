@@ -20,6 +20,7 @@ export default function Main(props) {
                     <li><Link to="/conditional">Conditional Rendering</Link></li>
                     <li><Link to="/services">API Integration</Link></li>
                     <li><Link to="/chartjs">Chart JS</Link></li>
+                    <li><Link to="/testing">Testing</Link></li>
                     {/* <button className="btnsm">help?</button> */}
                     <div>{token?<div><button className="logout" onClick={handlingSubmit}>Logout</button></div>:""}</div>
                 
