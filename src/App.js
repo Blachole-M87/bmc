@@ -6,16 +6,17 @@ import Section from "./everything/Section";
 import Registration from "./everything/Registration";
 // import Conditional from "./everything/Conditional"
 import Login from './everything/Login';
-import PrivateRoute from './everything/PrivateRoute';
+import PrivateRoute from './everything/routes/PrivateRoute';
 // import CrudApi from './everything/CrudApi';
 import {
   Routes,
   Route,
 } from "react-router-dom"
-import PageNotFound from './everything/PageNotFound';
+import PageNotFound from './everything/Error/PageNotFound';
 import Chartjs from './everything/Chartjs';
-import ErrorBondry from './ErrorBondry';
+import ErrorBondry from './everything/Error/ErrorBondry';
 import TestingArea from './everything/TestingArea';
+import PublicRoute from './everything/routes/PublicRoute';
 
 const CrudApi = lazy(()=>import('./everything/CrudApi'))
 const Conditional = lazy(()=>import('./everything/Conditional'))
@@ -47,9 +48,10 @@ function App() {
                   <ErrorBondry>
                     <Navbar title="BMC"/>
                     <Routes>
-                                <Route path="register" element={<Registration CN="Create an account "/>}/>
-                    
-                                <Route path="login" element={<Login/>}/>
+                                <Route  element={<PublicRoute/>}>
+                                  <Route path="register" element={<Registration CN="Create an account "/>}/>
+                                  <Route path="login" element={<Login/>}/>
+                                </Route>
                     
                                   <Route path ="/" element={<PrivateRoute/>}>
                                   <Route Route path="/" element={<Home/>}>
