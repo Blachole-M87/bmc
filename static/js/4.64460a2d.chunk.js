@@ -1,0 +1,2 @@
+(this.webpackJsonpbmccomplain=this.webpackJsonpbmccomplain||[]).push([[4],{299:function(c,s,t){"use strict";t.r(s);t(1);var i=t(0);s.default=function(c){return Object(i.jsx)("div",{className:c.switchdisplay,children:Object(i.jsx)("button",{className:c.buttonColor,onClick:c.togglemode,children:c.display})})}}}]);
+//# sourceMappingURL=4.64460a2d.chunk.js.map
